@@ -5,8 +5,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 """the program is used to extract position of ball in an image,
-two methods are provided: 1.for image with clear backgroud, calculate the midpoint od edges.
-2.for image with more colorful background, use hough transformation.
+two methods are provided: 
+1. for image with clear backgroud, calculate the midpoint od edges.
+2. for image with more colorful background, use hough transformation.
 The target ball is white"""
 
 def get_ball_position1(img):
@@ -30,7 +31,7 @@ def get_ball_position1(img):
     if np.argmax(edge_img) == 0:
         center_x = 0
         center_y = 0
-        #未检测到边线
+        #no edge is detected
     else:
         nonzero_row, nonzero_col = edge_img.nonzero()
         rowmax = np.argmax(nonzero_row)
@@ -46,10 +47,10 @@ def get_ball_position1(img):
     coor_x = center_x - col_num/2
     coor_y = row_num/2 - center_y
 
-    cv2.circle(edge_img, (int(center_x), int(center_y)), 2, (0, 0, 255), 10)#画图还是按照原始像素坐标系
+    cv2.circle(edge_img, (int(center_x), int(center_y)), 2, (0, 0, 255), 10)
     #cv2.imwrite('E:/image_output/track_method1_test4.jpg', edge_img)
 
-    return img,coor_x,coor_y#返回坐标为以图片中心为原点的像素坐标系
+    return img,coor_x,coor_y#origin locates in the center of picture
 
 
 def get_ball_position2(img):
