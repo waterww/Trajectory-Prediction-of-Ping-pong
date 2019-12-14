@@ -28,7 +28,7 @@ while k != 27:
     processed_img1, x, y = get_ball_position1(img1)  # top view
     processed_img2, x_image, z = get_ball_position1(img2)  # side view
 
-    "x,y是像素坐标值"
+    "x,y in pixel coordinate"
     print('the coordinate of ball in image frame is:', x, y, x_image, z)
 
     "save the valid data for spot predition"
@@ -41,7 +41,7 @@ while k != 27:
     "if there are 3 set of position data, call prediction function"
     if i==4 :
         pre_z = side_view_prediction(position_x_image,position_z,-320)
-        print("预测Z坐标为：",pre_z)
+        print("Predicted z：",pre_z)
 
         if pre_z != 240.0:
             i = 5
@@ -57,7 +57,7 @@ while k != 27:
 
     "to save data"
     if m==1000:
-        print("存储数据数组已满")
+        print("Overflow of data")
         break
     else:
         data_x[m] = x_image
