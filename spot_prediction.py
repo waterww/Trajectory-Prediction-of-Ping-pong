@@ -26,7 +26,7 @@ def side_view_prediction(X,Z,x_t):
     V_x = p1[0]#calculate horizontal velocity
 
     t_t = (x_t-X[0])/V_x+T[0]#time needed to reach target position from time 0
-    #print("到达目标点所需时间：",t_t)
+    #print("Arrival time：",t_t)
 
     """for m in range(len(X)):#get position of first landing
         if m>=1:
@@ -59,11 +59,11 @@ def side_view_prediction(X,Z,x_t):
             z_t = V_z[i] * t_n - (1 / 2) * g * (t_n ** 2)-210
             break
 
-    #print("X坐标：",X)
-    #print("Z坐标：",Z)
-    #print("对应时间：",T)
-    #print("最后一个跳跃周期所需时间：",t_n,"最后一个跳跃周期初始速度：",V_z[i])
-    #print("跳跃周期初速度和时间信息：",V_z,T_crash)
+    #print("X coordinate：",X)
+    #print("Z coordinate：",Z)
+    #print("Time：",T)
+    #print("Travel time of the last period：",t_n,"Initial velocity of the last period：",V_z[i])
+    #print("Initrial velocity, Travel time：",V_z,T_crash)
 
     return z_t
 
@@ -75,7 +75,7 @@ if __name__ == "__main__":
     X_matrix =[-199.5,-218.5,-235.5]
     Z_matrix =[-27,-58.5,-98.5]
 
-    print("预测Z坐标：",side_view_prediction(X_matrix,Z_matrix,pos_x))
+    print("Predicted z coordinate：",side_view_prediction(X_matrix,Z_matrix,pos_x))
 
 
 
