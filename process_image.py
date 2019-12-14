@@ -30,7 +30,7 @@ while k != 27:
     #cv2.imwrite('E:/camera11/sideview_test3_%04d.jpg' % i, processed_img2)
     
     print('the coordinate of ball in image frame is:',x,y)
-    "x,y是像素坐标值"
+    "x,y in pixel coordinate"
 
     #position_x[i]=x
     #position_y[i]=y
