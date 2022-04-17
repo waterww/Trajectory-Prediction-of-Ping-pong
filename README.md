@@ -1,4 +1,4 @@
-# Trajoctory-Prediction-of-Ping-pong
+# Trajectory-Prediction-of-Ping-pong
 ## Image Processing
 Turn RGB image to gray image, set the white area as white and other area as black, then extract the edges. The target ping-pong ball is white.
 ## Extract Ball Center
